@@ -1,10 +1,10 @@
 version: '3'
 services:
   web:
+      container_name: laravel-sanctum-demo-web
       build:
           context: ./docker
           dockerfile: web.dockerfile
-      container_name: laravel-sanctum-demo
       working_dir: /var/www
       volumes:
           - ./:/var/www
@@ -16,6 +16,7 @@ services:
       env_file:
           - .env
   app:
+      container_name: laravel-sanctum-demo-app
       build:
           context: ./docker
           dockerfile: app.dockerfile
@@ -29,6 +30,7 @@ services:
           - "DB_PORT=3306"
           - "DB_HOST=database"
   database:
+    container_name: laravel-sanctum-demo-db
     image: mysql:latest
     volumes:
           - "db-data:/var/lib/mysql/"
