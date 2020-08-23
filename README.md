@@ -7,6 +7,7 @@ Run Migrations: <br>
 ```
 docker exec -it laravel-sanctum-demo-app bash
 php artisan migrate
+php artisan db:seed
 ```
 
 Connect to database:
