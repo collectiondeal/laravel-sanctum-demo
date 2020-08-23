@@ -109,7 +109,7 @@ php artisan db:seed
 * password: secret
 * port: 33061
 
-### Start application:
+### Start application
 ```docker-compose up```
 
 ### Run artisan commands
