@@ -1,4 +1,4 @@
-# What has been done so far
+# What has been done
 
 ### Install Laravel
 ```composer create project --prefer-dist laravel/laravel sanctum-api```
