@@ -7,7 +7,7 @@
 ```composer require laravel/sanctum```
 
 ### Authentication scaffolding
-```composer require laravel/ui```
+```composer require laravel/ui``` and 
 ```php artisan ui bootstrap --auth```
 
 ### app/Providers/AppServiceProvider.php
