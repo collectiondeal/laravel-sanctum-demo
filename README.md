@@ -1,9 +1,9 @@
 ## Build steps
-Install Composer dependencies: ```composer install```
+Install composer dependencies: ```composer install```
 
 Create .env file: ```cp .env.example .env```
 
-Run Migrations: <br>
+Run migrations: <br>
 ```
 docker exec -it laravel-sanctum-demo-app bash
 php artisan migrate
