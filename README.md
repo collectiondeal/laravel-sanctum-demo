@@ -106,7 +106,7 @@ php artisan db:seed
 ### Connect to database
 * host: 127.0.0.1
 * user: root
-* password: secrete
+* password: secret
 * port: 33061
 
 ### Start application:
