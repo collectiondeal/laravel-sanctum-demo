@@ -1,43 +1,16 @@
-## Build steps
-Install composer dependencies: ```composer install```
-
-Create .env file: ```cp .env.example .env```
-
-Run migrations: <br>
-```
-docker exec -it laravel-sanctum-demo-app bash
-php artisan migrate
-php artisan db:seed
-```
-
-Connect to database:
-* host: 127.0.0.1
-* user: root
-* password: secrete
-* port: 33061
-
-## Run Steps:
-Run the application: ```docker-compose up```
-
-Run artisan commands: ```docker exec -it laravel-sanctum-demo-app bash```
-
-Visit the application: http://localhost
-
-<hr>
-
 # What has been done so far
 
-## Install Laravel
+### Install Laravel
 ```composer create project --prefer-dist laravel/laravel sanctum-api```
 
-## Install Sanctum
+### Install Sanctum
 ```composer require laravel/sanctum```
 
-## Authentication scaffolding
+### Authentication scaffolding
 ```composer require laravel/ui```
 ```php artisan ui bootstrap --auth```
 
-## app/Providers/AppServiceProvider.php
+### app/Providers/AppServiceProvider.php
 ```
 public function register()
 {
@@ -45,7 +18,7 @@ public function register()
 }
 ```
 
-## app/Http/Kernel.php
+### app/Http/Kernel.php
 ```
 use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 'api' => [
@@ -55,14 +28,14 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 ],
 ```
 
-## .env file
+### .env file
 ```
 SESSION_DRIVER=cookie
 SESSION_DOMAIN=localhost
 SANCTUM_STATEFUL_DOMAINS=localhost:3000 # Here lives our frontend
 ```
 
-## config/cors.php
+### config/cors.php
 ```
 return [
     'paths' => ['api/*', 'sanctum/csrf-cookie', 'login', 'logout'],
@@ -84,7 +57,7 @@ return [
 ];
 ```
 
-## database/seeds/UserSeeder.php
+### database/seeds/UserSeeder.php
 ```
 public function run()
 {
@@ -96,7 +69,7 @@ public function run()
 }
 ```
 
-## database/seeds/DatabaseSeeder.php
+### database/seeds/DatabaseSeeder.php
 ```
 public function run()
 {
@@ -104,7 +77,7 @@ public function run()
 }
 ```
 
-## routes/api.php
+### routes/api.php
 ```
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
@@ -112,3 +85,35 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 ```
+
+<hr>
+
+# Instructions
+
+### Install composer
+```composer install```
+
+### Create .env file 
+```cp .env.example .env```
+
+### Run migrations
+```
+docker exec -it laravel-sanctum-demo-app bash
+php artisan migrate
+php artisan db:seed
+```
+
+### Connect to database
+* host: 127.0.0.1
+* user: root
+* password: secrete
+* port: 33061
+
+### Start application:
+```docker-compose up```
+
+### Run artisan commands
+```docker exec -it laravel-sanctum-demo-app bash```
+
+### Visit the application
+http://localhost
